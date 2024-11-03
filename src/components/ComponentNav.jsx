@@ -7,9 +7,11 @@ export default function ComponentNav() {
         <h1 className="font-semibold text-lg">Getting Started</h1>
         <div className="flex flex-col text-neutral-400 gap-1">
           <NavLink
-            to="/component"
+            to="/docs"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-neutral-400"
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
             }
           >
             Introduction
@@ -18,7 +20,9 @@ export default function ComponentNav() {
           <NavLink
             to="/installation"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-neutral-400"
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
             }
           >
             Installation
@@ -31,7 +35,9 @@ export default function ComponentNav() {
           <NavLink
             to="/portfolio"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-neutral-400"
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
             }
           >
             Portfolio
@@ -45,7 +51,9 @@ export default function ComponentNav() {
           <NavLink
             to="/button"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-neutral-400"
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
             }
           >
             Button
@@ -53,7 +61,9 @@ export default function ComponentNav() {
           <NavLink
             to="/input"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-neutral-400"
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
             }
           >
             Input
@@ -61,10 +71,22 @@ export default function ComponentNav() {
           <NavLink
             to="/card"
             className={({ isActive }) =>
-              isActive ? "text-white font-medium" : "text-neutral-400"
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
             }
           >
             Card
+          </NavLink>
+          <NavLink
+            to="/footer"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
+            }
+          >
+            Footer
           </NavLink>
         </div>
       </div>

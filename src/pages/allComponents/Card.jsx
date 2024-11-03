@@ -3,6 +3,7 @@ import { FaApple, FaArrowRight, FaGooglePlay, FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import CopyCodeButton from "../../components/CopyCodeButton";
+import TabCard from "../../components/TabCard";
 
 const card = [
   {
@@ -607,19 +608,16 @@ export default function Card() {
           classes from Tailwind CSS.
         </p>
 
-        <div className="w-full flex flex-col gap-6">
+        {/* Card with Tab Feature */}
+        <div className="w-full flex flex-col gap-10">
           {card.map((c, index) => (
-            <div key={index} className="flex flex-col w-full gap-4">
-              <h1 className="text-2xl text-black font-bold">{c.title}</h1>
-              <div className="flex flex-col w-full gap-6">
-                <div className="w-full bg-white p-5 rounded-lg flex justify-center">
-                  {c.leftCode}
-                </div>
-                <div className="w-full">
-                  <CopyCodeButton code={c.rightCode} />
-                </div>
-              </div>
-            </div>
+            <TabCard
+              key={index}
+              index={index}
+              title={c.title}
+              leftCode={c.leftCode}
+              rightCode={c.rightCode}
+            />
           ))}
         </div>
       </div>

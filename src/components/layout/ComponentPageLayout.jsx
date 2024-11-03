@@ -11,7 +11,7 @@ export default function ComponentPageLayout({ children }) {
           {/* Components nav */}
           <ComponentNav />
         </div>
-        <main className="w-full lg:w-[80%] p-4 lg:px-8 overflow-y-auto">
+        <main className="w-full lg:w-[80%] p-4 pb-10 lg:px-8 overflow-y-auto scrollbar-hide">
           {children}
         </main>
       </div>

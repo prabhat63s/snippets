@@ -20,4 +20,13 @@ body {
   background: #4a4a4a;
 }
 
+/* Tailwind CSS for custom scrollbar hide class */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;   
+}
 

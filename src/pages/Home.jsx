@@ -26,7 +26,7 @@ export default function Home() {
           Tailwind CSS, React.
         </p>
         <Link
-          to="/component"
+          to="/docs"
           className="bg-white text-black rounded-lg text-sm px-3 py-2 flex items-center gap-1"
         >
           Get Started for free

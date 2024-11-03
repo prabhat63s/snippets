@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   const nav = [
-    { title: "Components", to: "/component" },
+    { title: "Components", to: "/docs" },
     { title: "Template", to: "/template" },
     { title: "Showcase", to: "/showcase" },
   ];
