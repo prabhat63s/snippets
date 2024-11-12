@@ -1,5 +1,4 @@
 import ComponentPageLayout from "../../components/layout/ComponentPageLayout";
-import CopyCodeButton from "../../components/CopyCodeButton";
 import { Link } from "react-router-dom";
 import TabCard from "../../components/TabCard";
 

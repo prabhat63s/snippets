@@ -73,33 +73,34 @@ export default function Input() {
         </div>
       ),
       rightCode: `
-      <div className="flex flex-col lg:w-[40%]">
-      <label
-      className="block mb-2 text-sm font-medium text-gray-900 "
-          htmlFor="small_size"
-        >
-          Small file input
-        </label>
-        <input
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-1"
-        id="small_size"
-          type="file"
-          />
+        <div className="flex flex-col lg:w-[40%]">
           <label
-          className="block mb-2 text-sm font-medium text-gray-900"
-          htmlFor="default_size"
+            className="block mb-2 text-sm font-medium text-gray-900 "
+            htmlFor="small_size"
           >
-          Default size
+            Small file input
           </label>
           <input
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-1"
-          id="default_size"
-          type="file"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-1"
+            id="small_size"
+            type="file"
+          />
+          <label
+            className="block mb-2 text-sm font-medium text-gray-900"
+            htmlFor="default_size"
+          >
+            Default size
+          </label>
+          <input
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-1"
+            id="default_size"
+            type="file"
           />
           <p className="mt-1 text-sm text-gray-500" id="file_input_help">
-          SVG, PNG, JPG or GIF (MAX. 800x400px).
+            SVG, PNG, JPG or GIF (MAX. 800x400px).
           </p>
-          </div>`,
+        </div>
+      `,
     },
     {
       title: "X Create Post ",

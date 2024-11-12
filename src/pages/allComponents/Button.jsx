@@ -29,7 +29,7 @@ const buttons = [
       </button>
     ),
     rightCode: `
-<button className="w-full md:w-fit rounded-md border-2 px-4 py-4 lg:py-2 text-base font-semibold hover:bg-neutral-950 text-white"">
+<button className="w-full md:w-fit rounded-md border-2 px-4 py-4 lg:py-2 text-base font-semibold hover:bg-neutral-950 text-white">
       Button 1
 </button>`,
   },

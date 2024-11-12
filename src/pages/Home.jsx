@@ -4,7 +4,6 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { SiReact, SiTailwindcss, SiVite } from "react-icons/si";
 import Showcase from "../components/Showcase";
 import DemoComponents from "../components/DemoComponents";
-import Testimonials from "../components/Testimonials";
 
 export default function Home() {
   return (
@@ -82,20 +81,6 @@ export default function Home() {
           </p>
         </div>
         <DemoComponents />
-      </div>
-
-      {/* Testonomilals */}
-      <div className="w-full flex items-center justify-center flex-col text-center gap-6 my-16">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-3xl lg:text-4xl font-semibold">
-            What People Are Saying
-          </h1>
-          <p className="lg:font-medium">
-            Don't just take our word for it. Here's what real people are saying
-            about Magic UI on Twitter.
-          </p>
-        </div>
-        <Testimonials />
       </div>
     </CommonLayout>
   );

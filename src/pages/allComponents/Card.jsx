@@ -2,7 +2,6 @@ import ComponentPageLayout from "../../components/layout/ComponentPageLayout";
 import { FaApple, FaArrowRight, FaGooglePlay, FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
-import CopyCodeButton from "../../components/CopyCodeButton";
 import TabCard from "../../components/TabCard";
 
 const card = [

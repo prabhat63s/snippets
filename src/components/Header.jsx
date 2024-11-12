@@ -42,7 +42,7 @@ export default function Header() {
   }, [navOpen]);
 
   return (
-    <div className="w-full border-b border-neutral-800 sticky z-50 top-0 backdrop-blur-lg">
+    <div className="w-full border-b border-neutral-800 sticky z-50 top-0 backdrop-blur-3xl">
       <div className="w-full flex justify-between items-center h-[9vh] px-4 lg:px-8">
         <div className="flex items-center gap-6">
           {/* Logo */}
@@ -71,6 +71,15 @@ export default function Header() {
               </Link>
             ))}
           </div>
+        </div>
+
+        {/* Search */}
+        <div className="hidden lg:flex gap-4 w-80 items-center bg-neutral-900 border border-neutral-800 rounded-md py-1.5 px-4">
+          <input
+            type="search"
+            className="bg-transparent outline-none w-full"
+            placeholder="Search"
+          />
         </div>
 
         {/* Social Navigation */}

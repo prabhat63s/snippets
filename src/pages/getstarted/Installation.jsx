@@ -1,5 +1,5 @@
 import ComponentPageLayout from "../../components/layout/ComponentPageLayout";
-import CopyCodeButton from "../../components/CopyCodeButton";
+import CodeBlock from "../../components/CodeBlock";
 
 export default function Installation() {
   return (
@@ -30,7 +30,7 @@ export default function Installation() {
               Start by creating a new Vite project if you don’t have one set up
               already. The most common approach is to use Create Vite.
             </p>
-            <CopyCodeButton
+            <CodeBlock
               code={`\nnpm create vite@latest my-project -- --template react
 cd my-project`}
             />
@@ -52,7 +52,7 @@ cd my-project`}
               </code> and{" "}
               <code className="text-white"> `postcss.config.js` </code> files:
             </p>
-            <CopyCodeButton
+            <CodeBlock
               code={`\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p`}
             />
           </div>
@@ -68,7 +68,7 @@ cd my-project`}
               template files in your{" "}
               <code className="text-white">`tailwind.config.js`</code> file.{" "}
             </p>
-            <CopyCodeButton
+            <CodeBlock
               code={`\n/** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -95,7 +95,7 @@ export default {
               for each of Tailwind’s layers to your{" "}
               <code className="text-white">`./src/index.css`</code> file.
             </p>
-            <CopyCodeButton
+            <CodeBlock
               code={`\n@tailwind base;
 @tailwind components;
 @tailwind utilities;`}
@@ -112,7 +112,7 @@ export default {
               Run your build process with{" "}
               <code className="text-white">`npm run dev`</code>.
             </p>
-            <CopyCodeButton code={`npm run dev`} />
+            <CodeBlock code={`npm run dev`} />
           </div>
           {/* Step 6: Start using Tailwind in your project */}
           <div className="flex flex-col gap-2">
@@ -124,7 +124,7 @@ export default {
             <p className="text-neutral-400">
               Start using Tailwind’s utility classes to style your content.
             </p>
-            <CopyCodeButton
+            <CodeBlock
               code={`\nexport default function App() {
   return (
     <h1 className="text-3xl font-bold underline">
