@@ -6,6 +6,7 @@ import TabCard from "../../components/TabCard";
 
 const card = [
   {
+    id: "default-card",
     title: "Default card",
     leftCode: (
       <Link
@@ -36,6 +37,7 @@ const card = [
     </Link>`,
   },
   {
+    id: "card-with-button",
     title: "Card with button",
     leftCode: (
       <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-xl">
@@ -78,6 +80,7 @@ const card = [
     </div>`,
   },
   {
+    id: "card-with-image",
     title: "Card with image",
     leftCode: (
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl">
@@ -138,6 +141,7 @@ const card = [
     </div>`,
   },
   {
+    id: "card-with-form-inputs",
     title: "Card with form inputs ",
     leftCode: (
       <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-xl sm:p-6 md:p-8">
@@ -302,7 +306,8 @@ const card = [
     </div>`,
   },
   {
-    title: "E-commerce card",
+    id: "product-card",
+    title: "Product card",
     leftCode: (
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl">
         <Link to="/">
@@ -382,6 +387,7 @@ const card = [
     </div>`,
   },
   {
+    id: "pricing-card",
     title: "Pricing card",
     leftCode: (
       <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-xl">
@@ -510,6 +516,7 @@ const card = [
     </div>`,
   },
   {
+    id: "call-to-action-card ",
     title: "Call to action card ",
     leftCode: (
       <div className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow-lg">
@@ -590,34 +597,49 @@ const card = [
 export default function Card() {
   return (
     <ComponentPageLayout>
-      <div className="flex flex-col gap-4">
-        {/* Navigation Path */}
-        <p className="flex items-center gap-1 text-neutral-400">
-          Docs <span className="text-white">{">"} Card</span>
-        </p>
+      <div className="w-full h-full flex">
+        <div className="lg:w-[75%] h-full flex flex-col gap-4 leading-6 overflow-y-auto scrollbar-hide">
+          {/* Navigation Path */}
+          <p className="flex items-center gap-1 text-neutral-400">
+            Docs <span className="text-white">{">"} Card</span>
+          </p>
 
-        {/* Title */}
-        <h1 className="text-xl lg:text-2xl font-semibold">Card</h1>
+          {/* Title */}
+          <h1 className="text-xl lg:text-2xl font-semibold">Card</h1>
 
-        {/* Introduction */}
-        <p className="text-neutral-400">
-          The card component can be used to show a wide variety of content such
-          as previews of blog posts, user profiles, pricing plans, and more.
-          Choose from one of the many examples built with React and the utility
-          classes from Tailwind CSS.
-        </p>
+          {/* Introduction */}
+          <p className="text-neutral-400">
+            The card component can be used to show a wide variety of content
+            such as previews of blog posts, user profiles, pricing plans, and
+            more. Choose from one of the many examples built with React and the
+            utility classes from Tailwind CSS.
+          </p>
 
-        {/* Card with Tab Feature */}
-        <div className="w-full flex flex-col gap-10">
-          {card.map((c, index) => (
-            <TabCard
-              key={index}
-              index={index}
-              title={c.title}
-              leftCode={c.leftCode}
-              rightCode={c.rightCode}
-            />
-          ))}
+          {/* Card with Tab Feature */}
+          <div className="w-full flex flex-col gap-10">
+            {card.map((c, index) => (
+              <TabCard
+                key={index}
+                index={index}
+                id={c.id}
+                title={c.title}
+                leftCode={c.leftCode}
+                rightCode={c.rightCode}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
+          <h1 className="font-semibold text-lg">On This Page</h1>
+          <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
+            <a href="#default-card">Default card</a>
+            <a href="#card-with-button">Card with button</a>
+            <a href="#card-with-image">Card with image</a>
+            <a href="#card-with-form-inputs">Card with form inputs</a>
+            <a href="#product-card">Product card</a>
+            <a href="#pricing-card">Pricing card</a>
+            <a href="#call-to-action-card">Call to action card</a>
+          </div>
         </div>
       </div>
     </ComponentPageLayout>

@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 
 export default function ComponentNav() {
   return (
-    <div className="w-full flex flex-col gap-4 overflow-auto">
+    <div className="w-full flex flex-col gap-4 ">
+      {/* Getting Started */}
       <div className="flex flex-col gap-2">
         <h1 className="font-semibold text-lg">Getting Started</h1>
         <div className="flex flex-col text-neutral-400 gap-1">
@@ -29,6 +30,7 @@ export default function ComponentNav() {
           </NavLink>
         </div>
       </div>
+      {/* Templates */}
       <div className="flex flex-col gap-2">
         <h1 className="font-semibold text-lg">Templates</h1>
         <div className="flex flex-col text-neutral-400 gap-1">
@@ -44,7 +46,7 @@ export default function ComponentNav() {
           </NavLink>
         </div>
       </div>
-
+      {/* Components */}
       <div className="flex flex-col gap-2">
         <h1 className="font-semibold text-lg">Components</h1>
         <div className="flex flex-col text-neutral-400 gap-1">

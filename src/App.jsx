@@ -11,6 +11,7 @@ import Button from "./pages/allComponents/Button";
 import Card from "./pages/allComponents/Card";
 import Input from "./pages/allComponents/Input";
 import Footer from "./pages/allComponents/Footer";
+import ColorPage from "./pages/ColorPage";
 
 function App() {
   return (
@@ -32,10 +33,15 @@ function App() {
         <Route path="/footer" element={<Footer />} />
 
         {/* Template Page */}
-        <Route path="/template" element={<TemplatePage />} />
+        <Route path="/templates" element={<TemplatePage />} />
 
         {/* Showcase */}
-        <Route path="/showcase" element={<ShowcasePage />} />
+        <Route path="/showcases" element={<ShowcasePage />} />
+
+        {/* Color Page */}
+        <Route path="/colors" element={<ColorPage />} />
+
+        {/* 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

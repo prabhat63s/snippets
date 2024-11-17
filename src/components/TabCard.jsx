@@ -3,14 +3,14 @@ import { useState } from "react";
 import { MdOutlineCode, MdOutlineRemoveRedEye } from "react-icons/md";
 import CodeBlock from "./CodeBlock";
 
-export default function TabCard({ index, title, leftCode, rightCode }) {
+export default function TabCard({ index, id, title, leftCode, rightCode }) {
   const [activeTab, setActiveTab] = useState("Preview");
 
   return (
     <div className="flex flex-col w-full gap-4">
       {/* Tab Navigation */}
       <div className="flex justify-between items-center">
-        <h1 className="text-lg font-semibold">
+        <h1 id={id} className="text-lg font-semibold">
           <span className="bg-neutral-900 px-2 py-1 rounded-md">
             {index + 1}.
           </span>{" "}

@@ -63,7 +63,7 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl lg:text-4xl font-semibold">Showcase</h1>
           <p className="font-medium ">
-            Companies choose Magic UI to build their landing pages.
+            Companies choose Snippet UI to build their landing pages.
           </p>
         </div>
         <Showcase />

@@ -4,6 +4,7 @@ import TabCard from "../../components/TabCard";
 
 const footer = [
   {
+    id: "default-footer",
     title: "Default footer",
     leftCode: (
       <footer className="w-full bg-black text-white p-6">
@@ -66,6 +67,7 @@ const footer = [
     </footer>`,
   },
   {
+    id: "footer-with-logo",
     title: "Footer with logo",
     leftCode: (
       <footer className="w-full border-t border-neutral-800 bg-black">
@@ -250,33 +252,43 @@ const footer = [
 export default function Footer() {
   return (
     <ComponentPageLayout>
-      <div className="flex flex-col gap-4">
-        {/* Navigation Path */}
-        <p className="flex items-center gap-1 text-neutral-400">
-          Docs <span className="text-white">{">"} Footer</span>
-        </p>
+      <div className="w-full h-full flex">
+        <div className="lg:w-[75%] h-full flex flex-col gap-4 leading-6 overflow-y-auto scrollbar-hide">
+          {/* Navigation Path */}
+          <p className="flex items-center gap-1 text-neutral-400">
+            Docs <span className="text-white">{">"} Footer</span>
+          </p>
 
-        {/* Title */}
-        <h1 className="text-xl lg:text-2xl font-semibold">Footer</h1>
+          {/* Title */}
+          <h1 className="text-xl lg:text-2xl font-semibold">Footer</h1>
 
-        {/* Introduction */}
-        <p className="text-neutral-400">
-          The footer component is an important section of a website where you
-          should provide content such as sitemap links, copyright text, logo of
-          your brand, social media account links, and more.
-        </p>
+          {/* Introduction */}
+          <p className="text-neutral-400">
+            The footer component is an important section of a website where you
+            should provide content such as sitemap links, copyright text, logo
+            of your brand, social media account links, and more.
+          </p>
 
-        {/* Card with Tab Feature */}
-        <div className="w-full flex flex-col gap-10">
-          {footer.map((c, index) => (
-            <TabCard
-              key={index}
-              index={index}
-              title={c.title}
-              leftCode={c.leftCode}
-              rightCode={c.rightCode}
-            />
-          ))}
+          {/* Card with Tab Feature */}
+          <div className="w-full flex flex-col gap-10">
+            {footer.map((c, index) => (
+              <TabCard
+                key={index}
+                index={index}
+                id={c.id}
+                title={c.title}
+                leftCode={c.leftCode}
+                rightCode={c.rightCode}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
+          <h1 className="font-semibold text-lg">On This Page</h1>
+          <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
+            <a href="#default-footer">Default footer</a>
+            <a href="#footer-with-logo">Footer with logo</a>
+          </div>
         </div>
       </div>
     </ComponentPageLayout>

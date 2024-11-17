@@ -8,10 +8,35 @@ export default function CodeBlock({ code }) {
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(code).then(() => {
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000);
-    });
+    // Try using the Clipboard API (modern browsers)
+    if (navigator.clipboard) {
+      navigator.clipboard
+        .writeText(code)
+        .then(() => {
+          setIsCopied(true);
+          setTimeout(() => setIsCopied(false), 2000);
+        })
+        .catch((err) => {
+          console.error("Clipboard API failed: ", err);
+          fallbackCopy();
+        });
+    } else {
+      // Fallback to execCommand (older browsers or browsers with restricted permissions)
+      fallbackCopy();
+    }
+  };
+
+  const fallbackCopy = () => {
+    // Create a temporary textarea element to hold the text
+    const textArea = document.createElement("textarea");
+    textArea.value = code; // Set the value to the text you want to copy
+    document.body.appendChild(textArea); // Append the textarea to the body
+    textArea.select(); // Select the content of the textarea
+    document.execCommand("copy"); // Execute the "copy" command
+    document.body.removeChild(textArea); // Remove the textarea from the DOM
+
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
   };
 
   return (

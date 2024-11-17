@@ -18,9 +18,10 @@ export default function Header() {
   };
 
   const nav = [
-    { title: "Components", to: "/docs" },
-    { title: "Template", to: "/template" },
-    { title: "Showcase", to: "/showcase" },
+    { title: "Docs", to: "/docs" },
+    { title: "Templates", to: "/templates" },
+    { title: "Showcases", to: "/showcases" },
+    { title: "Colors", to: "/colors" },
   ];
 
   const social = [
@@ -42,8 +43,8 @@ export default function Header() {
   }, [navOpen]);
 
   return (
-    <div className="w-full border-b border-neutral-800 sticky z-50 top-0 backdrop-blur-3xl">
-      <div className="w-full flex justify-between items-center h-[9vh] px-4 lg:px-8">
+    <div className="w-full border-b border-neutral-800 sticky z-50 top-0 bg-black">
+      <div className="w-full flex justify-between items-center h-[10vh] px-4 lg:px-8">
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link to="/" className="flex gap-2 items-center">
@@ -62,24 +63,19 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex gap-6 items-center">
             {nav.map((n, index) => (
-              <Link
+              <NavLink
                 to={n.to}
                 key={index}
-                className="text-neutral-400 text-sm hover:text-white"
+                className={({ isActive }) =>
+                  `text-sm hover:text-white ${
+                    isActive ? "text-white" : "text-neutral-400"
+                  }`
+                }
               >
                 {n.title}
-              </Link>
+              </NavLink>
             ))}
           </div>
-        </div>
-
-        {/* Search */}
-        <div className="hidden lg:flex gap-4 w-80 items-center bg-neutral-900 border border-neutral-800 rounded-md py-1.5 px-4">
-          <input
-            type="search"
-            className="bg-transparent outline-none w-full"
-            placeholder="Search"
-          />
         </div>
 
         {/* Social Navigation */}

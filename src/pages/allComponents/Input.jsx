@@ -42,6 +42,7 @@ export default function Input() {
 
   const card = [
     {
+      id: "file-upload-example",
       title: "File upload example",
       leftCode: (
         <div className="flex flex-col lg:w-[40%]">
@@ -103,6 +104,7 @@ export default function Input() {
       `,
     },
     {
+      id: "x-create-post",
       title: "X Create Post ",
       leftCode: (
         <div className="w-full flex items-start gap-4 py-4 bg-white border rounded-xl border-neutral-800 px-4 shadow-xl">
@@ -269,37 +271,47 @@ export default function Input() {
 
   return (
     <ComponentPageLayout>
-      <div className="flex flex-col gap-4">
-        {/* Navigation Path */}
-        <p className="flex items-center gap-1 text-neutral-400">
-          Docs <span className="text-white">{">"} Input</span>
-        </p>
+      <div className="w-full h-full flex">
+        <div className="lg:w-[75%] h-full flex flex-col gap-4 leading-6 overflow-y-auto scrollbar-hide">
+          {/* Navigation Path */}
+          <p className="flex items-center gap-1 text-neutral-400">
+            Docs <span className="text-white">{">"} Input</span>
+          </p>
 
-        {/* Title */}
-        <h1 className="text-xl lg:text-2xl font-semibold">Input</h1>
+          {/* Title */}
+          <h1 className="text-xl lg:text-2xl font-semibold">Input</h1>
 
-        {/* Introduction */}
-        <p className="text-neutral-400">
-          {" <input>"} tag can be used to upload one or more files from the
-          device storage of the user available in multiple sizes, styles, and
-          variants and built with the utility-first classes from Tailwind CSS.
-        </p>
-        <p className="text-neutral-400">
-          The {"<textarea>"} tag use to show a textarea component in React and
-          receive longer text from your users.
-        </p>
+          {/* Introduction */}
+          <p className="text-neutral-400">
+            {" <input>"} tag can be used to upload one or more files from the
+            device storage of the user available in multiple sizes, styles, and
+            variants and built with the utility-first classes from Tailwind CSS.
+          </p>
+          <p className="text-neutral-400">
+            The {"<textarea>"} tag use to show a textarea component in React and
+            receive longer text from your users.
+          </p>
 
-        {/* Card with Tab Feature */}
-        <div className="w-full flex flex-col gap-10">
-          {card.map((c, index) => (
-            <TabCard
-              key={index}
-              index={index}
-              title={c.title}
-              leftCode={c.leftCode}
-              rightCode={c.rightCode}
-            />
-          ))}
+          {/* Card with Tab Feature */}
+          <div className="w-full flex flex-col gap-10">
+            {card.map((c, index) => (
+              <TabCard
+                key={index}
+                index={index}
+                id={c.id}
+                title={c.title}
+                leftCode={c.leftCode}
+                rightCode={c.rightCode}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
+          <h1 className="font-semibold text-lg">On This Page</h1>
+          <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
+            <a href="#file-upload-example"> File upload example</a>
+            <a href="#x-create-post">X Create Post</a>
+          </div>
         </div>
       </div>
     </ComponentPageLayout>
