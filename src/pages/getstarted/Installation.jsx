@@ -21,119 +21,88 @@ export default function Installation() {
 
           {/* Instructions Section */}
           <div className="flex flex-col gap-4 text-neutral-300">
-            {/* Step 1: Create React Project */}
+            {/* Step 1 */}
             <div id="create-project-using-vite" className="flex flex-col gap-2">
               <h2 className="text-lg font-semibold">
-                <span className="bg-neutral-800 px-2 rounded-lg mr-2">1.</span>{" "}
+                <span className="bg-neutral-800 px-2 rounded-lg mr-2">1.</span>
                 Create project using Vite
               </h2>
               <p className="text-neutral-400">
                 Start by creating a new Vite project if you don’t have one set
-                up already. The most common approach is to use Create Vite.
+                up already.
               </p>
               <CodeBlock
-                code={`\nnpm create vite@latest my-project -- --template react
-cd my-project`}
+                code={`npm create vite@latest my-project -- --template react\ncd my-project`}
               />
             </div>
 
-            {/* Step 2: Install Tailwind CSS */}
+            {/* Step 2 */}
             <div id="install-tailwind-css" className="flex flex-col gap-2">
               <h2 className="text-lg font-semibold">
-                {" "}
                 <span className="bg-neutral-800 px-2 rounded-lg mr-2">2.</span>
                 Install Tailwind CSS
               </h2>
               <p className="text-neutral-400">
-                Install <code>`tailwindcss`</code> and its peer dependencies,
-                then generate your
-                <code className="text-white">
-                  {" "}
-                  `tailwind.config.js`{" "}
-                </code> and{" "}
-                <code className="text-white"> `postcss.config.js` </code> files:
+                Install <code>tailwindcss</code> and its peer dependencies.
               </p>
               <CodeBlock
-                code={`\nnpm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p`}
+                code={`npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p`}
               />
             </div>
 
-            {/* Step 3: Configure your template paths */}
+            {/* Step 3 */}
             <div id="configure-template-paths" className="flex flex-col gap-2">
               <h2 className="text-lg font-semibold">
                 <span className="bg-neutral-800 px-2 rounded-lg mr-2">3.</span>
                 Configure your template paths
               </h2>
               <p className="text-neutral-400">
-                Configure your template paths Add the paths to all of your
-                template files in your{" "}
-                <code className="text-white">`tailwind.config.js`</code> file.{" "}
+                Add paths to your template files in{" "}
+                <code>tailwind.config.js</code>.
               </p>
               <CodeBlock
-                code={`\n/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}`}
+                code={`/** @type {import('tailwindcss').Config} */\nexport default {\n  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],\n  theme: { extend: {} },\n  plugins: [],\n}`}
               />
             </div>
 
-            {/* Step 4:  Add the Tailwind directives to your CSS */}
+            {/* Step 4 */}
             <div id="add-tailwind-directives" className="flex flex-col gap-2">
               <h2 className="text-lg font-semibold">
-                {" "}
                 <span className="bg-neutral-800 px-2 rounded-lg mr-2">4.</span>
-                Add the Tailwind directives to your CSS
+                Add Tailwind directives to your CSS
               </h2>
               <p className="text-neutral-400">
-                Add the <code className="text-white">`@tailwind`</code>{" "}
-                directives for each of Tailwind’s layers to your{" "}
-                <code className="text-white">`./src/index.css`</code> file.
+                Add <code>@tailwind</code> directives to{" "}
+                <code>src/index.css</code>.
               </p>
               <CodeBlock
-                code={`\n@tailwind base;
-@tailwind components;
-@tailwind utilities;`}
+                code={`@tailwind base;\n@tailwind components;\n@tailwind utilities;`}
               />
             </div>
 
-            {/* Step 5: Start your build process */}
+            {/* Step 5 */}
             <div id="start-build-process" className="flex flex-col gap-2">
               <h2 className="text-lg font-semibold">
                 <span className="bg-neutral-800 px-2 rounded-lg mr-2">5.</span>
                 Start your build process
               </h2>
               <p className="text-neutral-400">
-                Run your build process with{" "}
-                <code className="text-white">`npm run dev`</code>.
+                Run <code>npm run dev</code> to start the build process.
               </p>
               <CodeBlock code={`npm run dev`} />
             </div>
 
-            {/* Step 6: Start using Tailwind in your project */}
+            {/* Step 6 */}
             <div id="start-using-tailwind" className="flex flex-col gap-2">
               <h2 className="text-lg font-semibold">
-                {" "}
                 <span className="bg-neutral-800 px-2 rounded-lg mr-2">6.</span>
                 Start using Tailwind in your project
               </h2>
               <p className="text-neutral-400">
-                Start using Tailwind’s utility classes to style your content.
+                Use Tailwind’s utility classes to style your content.
               </p>
               <CodeBlock
-                code={`\nexport default function App() {
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
-}`}
+                code={`export default function App() {\n  return (\n    <h1 className="text-3xl font-bold underline">\n      Hello world!\n    </h1>\n  );\n}`}
               />
             </div>
           </div>

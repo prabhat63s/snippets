@@ -12,6 +12,8 @@ import Card from "./pages/allComponents/Card";
 import Input from "./pages/allComponents/Input";
 import Footer from "./pages/allComponents/Footer";
 import ColorPage from "./pages/ColorPage";
+import Spinner from "./pages/allComponents/Spinner";
+import Animation from "./pages/allComponents/Animation";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path="/card" element={<Card />} />
         <Route path="/input" element={<Input />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/animation" element={<Animation />} />
+        <Route path="/spinner" element={<Spinner />} />
 
         {/* Template Page */}
         <Route path="/templates" element={<TemplatePage />} />

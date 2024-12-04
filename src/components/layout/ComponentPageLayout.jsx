@@ -6,7 +6,7 @@ export default function ComponentPageLayout({ children }) {
   return (
     <div className="w-full min-h-screen">
       <Header />
-      <div className="flex w-full h-[80vh] text-sm sticky top-16 z-10">
+      <div className="flex w-full h-[90vh] text-sm sticky top-16 z-10">
         <div className="hidden lg:flex lg:w-[20%] px-8 py-4 overflow-y-auto">
           {/* Components nav */}
           <ComponentNav />
@@ -15,7 +15,7 @@ export default function ComponentPageLayout({ children }) {
           {children}
         </main>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

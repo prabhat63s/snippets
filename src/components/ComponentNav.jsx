@@ -51,6 +51,16 @@ export default function ComponentNav() {
         <h1 className="font-semibold text-lg">Components</h1>
         <div className="flex flex-col text-neutral-400 gap-1">
           <NavLink
+            to="/animation"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
+            }
+          >
+            Animation
+          </NavLink>
+          <NavLink
             to="/button"
             className={({ isActive }) =>
               isActive
@@ -89,6 +99,16 @@ export default function ComponentNav() {
             }
           >
             Footer
+          </NavLink>
+          <NavLink
+            to="/spinner"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white bg-neutral-800 px-2 py-1 rounded-r-md border-l-2 border-neutral-500"
+                : "text-neutral-400 px-2 py-1 hover:underline"
+            }
+          >
+            Spinner
           </NavLink>
         </div>
       </div>
