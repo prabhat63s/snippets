@@ -11,7 +11,7 @@ export default function Home() {
       {/* Banner */}
       <div className="w-full flex items-center justify-center flex-col text-center gap-8 lg:gap-10 mt-20 leading-6">
         <Link
-          to="/template"
+          to="/templates"
           className="border-neutral-800 px-4 py-2 text-neutral-400 text-sm flex items-center gap-1 border rounded-full bg-transparent"
         >
           ✨ Introducing Snippet UI Template{" "}
@@ -25,7 +25,7 @@ export default function Home() {
           Tailwind CSS, React.
         </p>
         <Link
-          to="/docs"
+          to="/docs/introduction"
           className="bg-white text-black rounded-lg text-sm px-3 py-2 flex items-center gap-1"
         >
           Get Started for free

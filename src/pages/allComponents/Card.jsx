@@ -7,7 +7,6 @@ import TabCard from "../../components/TabCard";
 const card = [
   {
     id: "default-card",
-    title: "Default card",
     leftCode: (
       <Link
         to="/"
@@ -38,7 +37,6 @@ const card = [
   },
   {
     id: "card-with-button",
-    title: "Card with button",
     leftCode: (
       <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-xl">
         <Link to="/">
@@ -81,7 +79,6 @@ const card = [
   },
   {
     id: "card-with-image",
-    title: "Card with image",
     leftCode: (
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl">
         <Link to="/">
@@ -142,7 +139,6 @@ const card = [
   },
   {
     id: "card-with-form-inputs",
-    title: "Card with form inputs ",
     leftCode: (
       <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-xl sm:p-6 md:p-8">
         <form className="space-y-6" action="#">
@@ -307,7 +303,6 @@ const card = [
   },
   {
     id: "product-card",
-    title: "Product card",
     leftCode: (
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl">
         <Link to="/">
@@ -388,7 +383,6 @@ const card = [
   },
   {
     id: "pricing-card",
-    title: "Pricing card",
     leftCode: (
       <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-xl">
         <h5 className="mb-4 text-xl font-medium text-gray-500">
@@ -517,7 +511,6 @@ const card = [
   },
   {
     id: "call-to-action-card ",
-    title: "Call to action card ",
     leftCode: (
       <div className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow-lg">
         <h5 className="mb-2 text-3xl font-bold text-gray-900">
@@ -622,7 +615,11 @@ export default function Card() {
                 key={index}
                 index={index}
                 id={c.id}
-                title={c.title}
+                title={
+                  c.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
                 leftCode={c.leftCode}
                 rightCode={c.rightCode}
               />
@@ -632,13 +629,16 @@ export default function Card() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#default-card">Default card</a>
-            <a href="#card-with-button">Card with button</a>
-            <a href="#card-with-image">Card with image</a>
-            <a href="#card-with-form-inputs">Card with form inputs</a>
-            <a href="#product-card">Product card</a>
-            <a href="#pricing-card">Pricing card</a>
-            <a href="#call-to-action-card">Call to action card</a>
+            {card.map((c, index) => (
+              <a key={index} href={`#${c.id}`}>
+                {">"}{" "}
+                {
+                  c.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+              </a>
+            ))}
           </div>
         </div>
       </div>

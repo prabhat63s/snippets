@@ -5,7 +5,6 @@ import TabCard from "../../components/TabCard";
 const footer = [
   {
     id: "default-footer",
-    title: "Default footer",
     leftCode: (
       <footer className="w-full bg-black text-white p-6">
         <div className="w-full lg:flex-row gap-2 flex-col flex justify-between ">
@@ -68,7 +67,6 @@ const footer = [
   },
   {
     id: "footer-with-logo",
-    title: "Footer with logo",
     leftCode: (
       <footer className="w-full border-t border-neutral-800 bg-black">
         <div className="flex flex-col md:flex-row justify-between gap-8 px-4 py-10 lg:px-8">
@@ -271,14 +269,18 @@ export default function Footer() {
 
           {/* Card with Tab Feature */}
           <div className="w-full flex flex-col gap-10">
-            {footer.map((c, index) => (
+            {footer.map((f, index) => (
               <TabCard
                 key={index}
                 index={index}
-                id={c.id}
-                title={c.title}
-                leftCode={c.leftCode}
-                rightCode={c.rightCode}
+                id={f.id}
+                title={
+                  f.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+                leftCode={f.leftCode}
+                rightCode={f.rightCode}
               />
             ))}
           </div>
@@ -286,8 +288,16 @@ export default function Footer() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#default-footer">Default footer</a>
-            <a href="#footer-with-logo">Footer with logo</a>
+            {footer.map((f, index) => (
+              <a key={index} href={`#${f.id}`}>
+                {">"}{" "}
+                {
+                  f.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+              </a>
+            ))}
           </div>
         </div>
       </div>

@@ -4,8 +4,7 @@ import TabCard from "../../components/TabCard";
 export default function Animation() {
   const animations = [
     {
-      id: "default-button",
-      title: "Default button",
+      id: "default-animation",
       leftCode: (
         <button
           type="button"
@@ -37,9 +36,7 @@ export default function Animation() {
             <h1 className="text-xl lg:text-2xl font-semibold">Animation</h1>
 
             {/* Introduction */}
-            <p className="text-neutral-400">
-              The 
-            </p>
+            <p className="text-neutral-400">The</p>
 
             <div className="flex flex-col gap-10">
               {animations.map((animation, index) => (
@@ -47,7 +44,11 @@ export default function Animation() {
                   key={index}
                   index={index}
                   id={animation.id}
-                  title={animation.title}
+                  title={
+                    animation.id
+                      .replace(/-/g, " ") // Replace hyphens with spaces
+                      .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                  }
                   leftCode={animation.leftCode}
                   rightCode={animation.rightCode}
                 />
@@ -58,11 +59,16 @@ export default function Animation() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#default-button">Default button</a>
-            <a href="#button-1">Button 1</a>
-            <a href="#button-2">Button 2</a>
-            <a href="#black-to-gray">Black to gray</a>
-            <a href="#google-sign-in">Sign in with Google</a>
+            {animations.map((animation, index) => (
+              <a key={index} href={`#${animation.id}`}>
+                {">"}{" "}
+                {
+                  animation.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+              </a>
+            ))}
           </div>
         </div>
       </div>

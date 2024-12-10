@@ -110,17 +110,19 @@ export default function Installation() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#create-project-using-vite">Create project using Vite</a>
-            <a href="#install-tailwind-css">Install Tailwind CSS</a>
+            <a href="#create-project-using-vite">
+              {">"} Create project using Vite
+            </a>
+            <a href="#install-tailwind-css">{">"} Install Tailwind CSS</a>
             <a href="#configure-template-paths">
-              Configure your template paths
+              {">"} Configure your template paths
             </a>
             <a href="#add-tailwind-directives">
-              Add the Tailwind directives to your CSS
+              {">"} Add the Tailwind directives to your CSS
             </a>
-            <a href="#start-build-process">Start your build process</a>
+            <a href="#start-build-process">{">"} Start your build process</a>
             <a href="#start-using-tailwind">
-              Start using Tailwind in your project
+              {">"} Start using Tailwind in your project
             </a>
           </div>
         </div>

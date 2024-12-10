@@ -5,8 +5,7 @@ export default function Spinner() {
   const spinners = [
     {
       id: "default-spinner",
-      title: "Default spinner",
-      leftCode: (
+           leftCode: (
         <div className="grid w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <svg
             className="text-gray-300 animate-spin"
@@ -64,8 +63,7 @@ export default function Spinner() {
     },
     {
       id: "spinner-colors",
-      title: "Spinner Colors",
-      leftCode: (
+           leftCode: (
         <div className="grid w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <div className="flex gap-8">
             <svg
@@ -463,8 +461,7 @@ export default function Spinner() {
     },
     {
       id: "spinner-with-custom-styles",
-      title: "Spinner with Custom Styles",
-      leftCode: (
+           leftCode: (
         <div className="grid w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
           <svg
             className="w-16 h-16 animate-spin text-gray-700"
@@ -549,7 +546,11 @@ export default function Spinner() {
                   key={index}
                   index={index}
                   id={spinner.id}
-                  title={spinner.title}
+                  title= {
+                    spinner.id
+                      .replace(/-/g, " ") // Replace hyphens with spaces
+                      .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                  }
                   leftCode={spinner.leftCode}
                   rightCode={spinner.rightCode}
                 />
@@ -560,9 +561,16 @@ export default function Spinner() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#default-spinner">Default spinner</a>
-            <a href="#spinner-colors">Spinner Colors</a>
-            <a href="#spinner-with-custom-styles">Spinner with Custom Styles</a>
+            {spinners.map((spinner, index) => (
+              <a key={index} href={`#${spinner.id}`}>
+                {">"}{" "}
+                {
+                  spinner.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+              </a>
+            ))}
           </div>
         </div>
       </div>

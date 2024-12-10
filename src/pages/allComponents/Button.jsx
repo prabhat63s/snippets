@@ -5,7 +5,6 @@ import TabCard from "../../components/TabCard";
 const buttons = [
   {
     id: "default-button",
-    title: "Default button",
     leftCode: (
       <button
         type="button"
@@ -24,7 +23,6 @@ const buttons = [
   },
   {
     id: "button-1",
-    title: "Button 1",
     leftCode: (
       <button className="w-full md:w-fit rounded-md border-2 px-4 py-4 lg:py-2 text-base font-semibold hover:bg-neutral-950 text-white">
         Button 1
@@ -37,7 +35,6 @@ const buttons = [
   },
   {
     id: "button-2",
-    title: "Button 2",
     leftCode: (
       <button className="w-full md:w-fit rounded-md border-t-4 border-l-4 px-4 py-4 lg:py-2 text-base font-semibold text-white shadow-md hover:bg-neutral-800 hover:shadow-lg">
         Button 2
@@ -50,7 +47,6 @@ const buttons = [
   },
   {
     id: "black-to-gray",
-    title: "Black to gray",
     leftCode: (
       <button
         type="button"
@@ -69,7 +65,6 @@ const buttons = [
   },
   {
     id: "google-sign-in",
-    title: "Sign in with Google",
     leftCode: (
       <button
         type="button"
@@ -121,7 +116,11 @@ export default function Button() {
                   key={index}
                   index={index}
                   id={button.id}
-                  title={button.title}
+                  title={
+                    button.id
+                      .replace(/-/g, " ") // Replace hyphens with spaces
+                      .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                  }
                   leftCode={button.leftCode}
                   rightCode={button.rightCode}
                 />
@@ -132,11 +131,19 @@ export default function Button() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#default-button">Default button</a>
-            <a href="#button-1">Button 1</a>
-            <a href="#button-2">Button 2</a>
-            <a href="#black-to-gray">Black to gray</a>
-            <a href="#google-sign-in">Sign in with Google</a>
+            {buttons.map((button, index) => (
+              <a
+                key={index}
+                href={`#${button.id}`}
+              >
+                {">"}{" "}
+                {
+                  button.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+              </a>
+            ))}
           </div>
         </div>
       </div>

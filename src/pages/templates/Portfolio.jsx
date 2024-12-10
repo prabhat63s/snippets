@@ -103,10 +103,10 @@ export default function Portfolio() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#what-is-this?">What is this?</a>
-            <a href="#why-should-i-use-this?">Why Should I Use This?</a>
-            <a href="#featuers">Features</a>
-            <a href="#tech-stack">Tech Stack</a>
+            <a href="#what-is-this?">{">"} What is this?</a>
+            <a href="#why-should-i-use-this?">{">"} Why Should I Use This?</a>
+            <a href="#featuers">{">"} Features</a>
+            <a href="#tech-stack">{">"} Tech Stack</a>
           </div>
         </div>
       </div>

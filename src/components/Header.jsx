@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   const nav = [
-    { title: "Docs", to: "/docs" },
+    { title: "Docs", to: "/docs/introduction" },
     { title: "Templates", to: "/templates" },
     { title: "Showcases", to: "/showcases" },
     { title: "Colors", to: "/colors" },

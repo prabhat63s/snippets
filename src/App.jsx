@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import ComponentPage from "./pages/getstarted/ComponentPage";
 import TemplatePage from "./pages/TemplatePage";
 import ShowcasePage from "./pages/ShowcasePage";
 import Installation from "./pages/getstarted/Installation";
@@ -14,6 +13,7 @@ import Footer from "./pages/allComponents/Footer";
 import ColorPage from "./pages/ColorPage";
 import Spinner from "./pages/allComponents/Spinner";
 import Animation from "./pages/allComponents/Animation";
+import Introduction from "./pages/getstarted/Introduction";
 
 function App() {
   return (
@@ -22,19 +22,23 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Getting Started */}
-        <Route path="/docs" element={<ComponentPage />} />
-        <Route path="/installation" element={<Installation />} />
+        <Route path="/docs">
+          <Route path="introduction" element={<Introduction />} />
+          <Route path="installation" element={<Installation />} />
+        </Route>
 
         {/* All Templates */}
         <Route path="/portfolio" element={<Portfolio />} />
 
         {/* All Components */}
-        <Route path="/button" element={<Button />} />
-        <Route path="/card" element={<Card />} />
-        <Route path="/input" element={<Input />} />
-        <Route path="/footer" element={<Footer />} />
-        <Route path="/animation" element={<Animation />} />
-        <Route path="/spinner" element={<Spinner />} />
+        <Route path="/components">
+          <Route path="button" element={<Button />} />
+          <Route path="card" element={<Card />} />
+          <Route path="input" element={<Input />} />
+          <Route path="footer" element={<Footer />} />
+          <Route path="animation" element={<Animation />} />
+          <Route path="spinner" element={<Spinner />} />
+        </Route>
 
         {/* Template Page */}
         <Route path="/templates" element={<TemplatePage />} />

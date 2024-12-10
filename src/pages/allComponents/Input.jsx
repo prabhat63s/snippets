@@ -40,10 +40,9 @@ export default function Input() {
     }
   };
 
-  const card = [
+  const inputs = [
     {
       id: "file-upload-example",
-      title: "File upload example",
       leftCode: (
         <div className="flex flex-col lg:w-[40%]">
           <label
@@ -105,7 +104,6 @@ export default function Input() {
     },
     {
       id: "x-create-post",
-      title: "X Create Post ",
       leftCode: (
         <div className="w-full flex items-start gap-4 py-4 bg-white border rounded-xl border-neutral-800 px-4 shadow-xl">
           <div className="">
@@ -294,14 +292,18 @@ export default function Input() {
 
           {/* Card with Tab Feature */}
           <div className="w-full flex flex-col gap-10">
-            {card.map((c, index) => (
+            {inputs.map((input, index) => (
               <TabCard
                 key={index}
                 index={index}
-                id={c.id}
-                title={c.title}
-                leftCode={c.leftCode}
-                rightCode={c.rightCode}
+                id={input.id}
+                title={
+                  input.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+                leftCode={input.leftCode}
+                rightCode={input.rightCode}
               />
             ))}
           </div>
@@ -309,8 +311,16 @@ export default function Input() {
         <div className="hidden lg:flex lg:w-[25%] pl-10 py-4 flex-col gap-2 overflow-y-auto scrollbar-hide">
           <h1 className="font-semibold text-lg">On This Page</h1>
           <div className="text-sm flex flex-col items-start gap-2 text-neutral-200">
-            <a href="#file-upload-example"> File upload example</a>
-            <a href="#x-create-post">X Create Post</a>
+            {inputs.map((input, index) => (
+              <a key={index} href={`#${input.id}`}>
+                {">"}{" "}
+                {
+                  input.id
+                    .replace(/-/g, " ") // Replace hyphens with spaces
+                    .replace(/^\w/, (c) => c.toUpperCase()) // Capitalize the first character
+                }
+              </a>
+            ))}
           </div>
         </div>
       </div>
